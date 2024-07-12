@@ -3,7 +3,7 @@
 % Function to compute and display
 % a meshed sinusoidal icosahedron.
 %
-% Author & support : nicolas.douillet (at) free.fr 2016-2020.
+% Author : nicolas.douillet (at) free.fr 2016-2024.
 %
 %% Syntax
 %

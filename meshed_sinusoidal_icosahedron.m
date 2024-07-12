@@ -2,7 +2,7 @@ function [M, T] = meshed_sinusoidal_icosahedron(sampling, w, option_display)
 %% meshed_sinusoidal_icosahedron : function to compute
 % display, and save a meshed sinusoidal icosahedron.
 %
-% Author & support : nicolas.douillet (at) free.fr 2016-2020.
+% Author : nicolas.douillet (at) free.fr 2016-2024.
 %
 %
 % Syntax
@@ -202,7 +202,7 @@ M = [X Y Z];
 
 for i = 1:size(M,1)
     
-    radius = sqrt(sum(M(i,:).^2));
+    radius = vecnorm(M(i,:)');
     
     if radius ~= 1
         M(i,:) = M(i,:) / radius;
@@ -250,7 +250,7 @@ M(f,:) = N;
 TRI = triangulation(T, M(:,1), M(:,2), M(:,3));
 
 
-% Display
+%% Display
 if option_display 
     
     figure;
@@ -271,7 +271,7 @@ end % meshed_sinusoidal_icosahedron
 function [V0, min_dst] = closest_vertex(Point, V)
 
 
-dst_vect = sqrt(sum((V-repmat(Point, [1,size(V,2)])).^2,1));
+dst_vect = vecnorm(V-repmat(Point, [1,size(V,2)]));
 
 f = find(dst_vect == min(dst_vect));
 min_dst = dst_vect(f(1));
