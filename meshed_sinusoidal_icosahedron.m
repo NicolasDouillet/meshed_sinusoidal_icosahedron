@@ -2,7 +2,7 @@ function [M, T] = meshed_sinusoidal_icosahedron(sampling, w, option_display)
 %% meshed_sinusoidal_icosahedron : function to compute
 % display, and save a meshed sinusoidal icosahedron.
 %
-% Author : nicolas.douillet (at) free.fr 2016-2024.
+% Author : nicolas.douillet9 (at) gmail.com, 2016-2024.
 %
 %
 % Syntax
